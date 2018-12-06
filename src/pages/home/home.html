@@ -1,14 +1,67 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      Demonstração - Coletor
     </ion-title>
   </ion-navbar>
 </ion-header>
 
+
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card>
+    <ion-card-header>
+      <h1>Pesquisar por crachá</h1>
+    </ion-card-header>
+    <form #f="ngForm" class="form" (ngSubmit)="onSubmit(f)">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label color="primary" floating>Crachá</ion-label>
+              <ion-input type="text" name="cracha" [(ngModel)]="cracha" required>
+              </ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col align-self-stretch>
+            <button ion-button class="submit" outline icon-end>
+              Pesquisar
+              <ion-icon name="search"></ion-icon>
+            </button>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </form>
+  </ion-card>
+
+  <ion-card class="tabela">
+    <ion-card-header>
+      <h1>Dados do funcionário</h1>
+    </ion-card-header>
+
+    <ion-item>
+      <ion-label color="primary" floating>Nome</ion-label>
+      <ion-input type="text" name="nome" [(ngModel)]="nome" disabled>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" floating>Telefone</ion-label>
+      <ion-input type="text" name="telefone" [(ngModel)]="telefone" disabled>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" floating>E-mail</ion-label>
+      <ion-input type="text" name="email" [(ngModel)]="email" disabled>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" floating>Cargo</ion-label>
+      <ion-input type="text" name="cargo" [(ngModel)]="cargo" disabled>
+      </ion-input>
+    </ion-item>
+
+  </ion-card>
 </ion-content>
